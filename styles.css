@@ -340,9 +340,7 @@ body.nav-open .nav-toggle span:last-child {
 }
 
 .eyebrow,
-.eyebrow-text,
-.section-kicker,
-.section-label {
+.eyebrow-text {
   margin: 0 0 18px;
   color: var(--cyan-accent);
   font-size: 12px;
@@ -385,8 +383,7 @@ body.nav-open .nav-toggle span:last-child {
   margin-top: 34px;
 }
 
-.case-meta span,
-.blog-grid span {
+.case-meta span {
   border: 1px solid var(--white-faint);
   border-radius: 999px;
   background: rgba(15, 31, 61, 0.54);
@@ -396,73 +393,45 @@ body.nav-open .nav-toggle span:last-child {
   font-weight: 600;
 }
 
-.how-we-work,
 .section,
 .site-footer {
   width: min(calc(100% - 48px), var(--max));
   margin: 0 auto;
 }
 
-.how-we-work {
-  width: 100%;
-  background: var(--navy-mid);
-  padding: 5rem 0;
-}
-
-.section-label {
-  width: min(calc(100% - 48px), var(--max));
-  margin: 0 auto;
-}
-
-.steps-grid {
-  display: grid;
-  width: min(calc(100% - 48px), var(--max));
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin: 0 auto;
-  margin-top: 2.5rem;
-}
-
 /* Shared card surface. Sections on a navy-mid band flip cards to navy-deep
    via --card-bg so cards always contrast with their background. */
-.step-card,
 .service-card,
 .debt-panel,
 .case-card,
+.audience-grid article,
 .process-list li,
 .team-grid article,
-.blog-grid article,
+.values-grid article,
 .faq-list details {
   border: 1px solid var(--white-faint);
   border-radius: var(--radius-md);
   background: var(--card-bg, var(--navy-mid));
 }
 
-.how-we-work,
-.debt-section,
+.services-section,
+.audience-section,
 .process-section,
-.blog-section,
+.advice-section,
 .booking-section {
   --card-bg: var(--navy-deep);
 }
 
-.step-card,
 .process-list li {
   border-top: 2px solid var(--blue-accent);
   transition-property: border-color;
   transition-duration: 0.2s;
 }
 
-.step-card:hover,
 .process-list li:hover {
   border-top-color: var(--cyan-accent);
 }
 
-.step-card {
-  padding: 2rem;
-}
-
-.step-number,
 .service-index,
 .case-meta,
 .process-list span {
@@ -471,22 +440,6 @@ body.nav-open .nav-toggle span:last-child {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.step-number {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.step-title {
-  margin: 0 0 0.75rem;
-}
-
-.step-desc {
-  margin: 0;
-  color: var(--white-muted);
-  font-size: 0.95rem;
-  line-height: 1.65;
 }
 
 .section {
@@ -516,8 +469,8 @@ body.nav-open .nav-toggle span:last-child {
 }
 
 .service-grid,
-.team-grid,
-.blog-grid {
+.audience-grid,
+.team-grid {
   display: grid;
   width: min(calc(100% - 48px), var(--max));
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -525,16 +478,17 @@ body.nav-open .nav-toggle span:last-child {
   margin: 0 auto;
 }
 
-.services-section,
+.debt-section,
 .work-section,
 .about-section,
 .faq-section {
   background: var(--navy-deep);
 }
 
-.debt-section,
+.services-section,
+.audience-section,
 .process-section,
-.blog-section,
+.advice-section,
 .booking-section {
   background: var(--navy-mid);
 }
@@ -554,9 +508,22 @@ body.nav-open .nav-toggle span:last-child {
 .case-card p,
 .process-list p,
 .team-grid p,
-.blog-grid p,
+.audience-grid p,
+.values-grid p,
 .faq-list p {
   color: var(--white-muted);
+}
+
+.audience-grid article {
+  padding: 28px;
+}
+
+.audience-grid h3 {
+  margin-bottom: 10px;
+}
+
+.audience-grid p {
+  margin: 0;
 }
 
 .service-card ul,
@@ -711,14 +678,34 @@ body.nav-open .nav-toggle span:last-child {
   font-size: 0.95rem;
 }
 
-.blog-grid article {
-  padding: 24px;
+.values-grid {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
 }
 
-.blog-grid span {
-  display: inline-flex;
-  width: fit-content;
-  margin-bottom: 20px;
+.values-grid article {
+  padding: 22px;
+}
+
+.values-grid h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.values-grid p {
+  margin: 0;
+  max-width: none;
+  font-size: 0.95rem;
+}
+
+.advice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .faq-list {
@@ -872,10 +859,10 @@ body.nav-open .nav-toggle span:last-child {
     display: grid;
   }
 
-  .steps-grid,
   .service-grid,
+  .audience-grid,
   .process-list,
-  .blog-grid {
+  .values-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -942,7 +929,8 @@ body.nav-open .nav-toggle span:last-child {
   }
 
   .hero-actions,
-  .booking-actions {
+  .booking-actions,
+  .advice-actions {
     flex-direction: column;
     align-items: stretch;
   }
@@ -952,11 +940,11 @@ body.nav-open .nav-toggle span:last-child {
     flex: 1 1 auto;
   }
 
-  .steps-grid,
   .service-grid,
+  .audience-grid,
   .process-list,
   .team-grid,
-  .blog-grid {
+  .values-grid {
     grid-template-columns: 1fr;
   }
 
