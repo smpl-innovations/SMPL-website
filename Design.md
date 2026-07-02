@@ -72,11 +72,10 @@ Still open before launch:
 
 The hero should reuse the current SMPL content and make it sharper:
 
-- Eyebrow: `Simplify your operations`
+- Hero entry: no eyebrow; the h1 is the first content element.
 - Main headline: `Eliminate your administrative debt.`
-- Supporting copy: `We transform your cumbersome workflows and connect your
-  isolated software with intelligent applications — without having to replace
-  your current systems.` (the Wix value proposition; the shorter tagline
+- Supporting copy: `Keep your current tools. Lose the manual work. We build the
+  connections and automations that give your team its hours back.` (the shorter tagline
   `We remove the manual. You keep the momentum.` moved to the booking section)
 - Primary CTA: `Meet an SMPL expert`
 - Secondary CTA: `View use cases`
