@@ -257,32 +257,23 @@ h3 {
 }
 
 .logo-mark {
-  display: inline-grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
   flex: 0 0 auto;
-  border: 1px solid var(--white-faint);
-  border-radius: var(--radius-sm);
-  background: var(--navy-deep);
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 700;
   font-stretch: 122%;
   letter-spacing: -0.01em;
   line-height: 1;
-  transition-property: border-color, background-color;
+  transition-property: color;
   transition-duration: 180ms;
 }
 
 .brand:hover .logo-mark,
 .footer-brand:hover .logo-mark {
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.site-header.scrolled .logo-mark {
-  background: transparent;
+  color: var(--white-muted);
 }
 
 .site-nav {
@@ -455,8 +446,7 @@ body.nav-open .nav-toggle span:last-child {
   margin: 0 auto;
 }
 
-.eyebrow,
-.eyebrow-text {
+.eyebrow {
   margin: 0 0 18px;
   color: var(--cyan-accent);
   font-family: var(--font-mono);
@@ -478,22 +468,28 @@ main {
 }
 
 .hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-bottom: 1.25rem;
-}
-
-.eyebrow-line {
-  display: block;
-  width: 32px;
-  height: 1.5px;
-  flex-shrink: 0;
-  background: var(--cyan-accent);
 }
 
 .eyebrow-text {
   margin: 0;
+  color: var(--white-dim);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow-brand,
+.eyebrow-accent {
+  color: var(--white);
+  font-weight: 700;
+  font-stretch: 122%;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow-accent {
+  color: var(--blue-accent);
 }
 
 .hero-copy {

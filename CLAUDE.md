@@ -29,7 +29,7 @@ There is no dev server. Preview by opening `index.html` directly, or run any sta
 
 ## Design intent
 
-`Design.md` is the source of truth for brand direction and content decisions — read it before changing copy, layout hierarchy, or visuals. Key constraints it encodes: navy technical palette only (no purple gradients, no gray logo backgrounds), restrained hero visuals that don't overpower the message, a role-differentiated card system with one shared button language, and case studies that follow `Problem → SMPL solution → Result`. `REDESIGN_PLAN.md` records the phased v2 redesign (typography → blueprint surfaces → layout rhythm → motion → docs; all phases complete as of June 2026).
+`Design.md` is the source of truth for brand direction and content decisions — read it before changing copy, layout hierarchy, or visuals. Key constraints it encodes: navy technical palette only (no purple gradients, no gray logo backgrounds), restrained hero visuals that don't overpower the message, a role-differentiated card system with one shared button language, and case studies that follow `Problem → SMPL solution → Result`. The official logo asset is `logo_smpl.avif` (repo root) — use it wherever an image mark is needed; in the header and footer the brand is a plain white "smpl" text wordmark (`--font-display`, expanded) sitting directly on the navy background, never inside a boxed tile. `REDESIGN_PLAN.md` records the phased v2 redesign (typography → blueprint surfaces → layout rhythm → motion → docs; all phases complete as of June 2026).
 
 ## Known placeholders (per README + Design.md)
 

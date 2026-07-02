@@ -95,8 +95,8 @@ rendered only above 980px, over the shared circuit canvas.
 Use a component system that feels technical, calm and practical rather than
 hype-driven:
 
-- Header: compact glass surface, official SMPL logo, short nav, strong booking
-  link.
+- Header: compact glass surface, plain white "smpl" wordmark (no boxed logo
+  tile), short nav, strong booking link.
 - Buttons: one solid primary and one ghost secondary, both with mono uppercase
   labels, sharp radius, a cyan trace-line hover and a 1px press. Use the same
   radius, padding and hover/press treatment everywhere.
@@ -137,7 +137,7 @@ and the process once partners approve them.
 
 Use the strict navy technical palette from the refactor:
 
-- `#0B1628` for the deepest background and logo block.
+- `#0B1628` for the deepest background and the surface the logo sits on.
 - `#0F1F3D` for cards and surfaces.
 - `#162848` for hover states and border-adjacent depth.
 - `#2563EB` for primary CTAs and active states.
@@ -151,9 +151,11 @@ brand should feel:
 - Boutique and local to Montreal.
 - Trustworthy enough for NPOs and SMEs handling sensitive operational data.
 
-The current nav uses a CSS logo block so the mark always sits on `#0B1628`,
-matching the desired navy-background logo direction even if the provided AVIF
-asset contains a gray rectangle.
+The official logo asset is `logo_smpl.avif` at the repo root — use it wherever
+an image mark is required (favicon, OG/social cards, external profiles). In the
+header and footer the brand renders as a plain white "smpl" text wordmark
+(Archivo, expanded 122%, ~30px) sitting directly on `#0B1628` — no boxed
+container, border or background tile behind it.
 
 ## Design System v2 (June 2026)
 
