@@ -129,6 +129,7 @@ function createCircuitBackground(target) {
     return point;
   };
 
+  // Canvas mirrors --blue-glow (#3b82f6 / 59,130,246); update with the styles.css palette.
   const drawDot = (point, alpha, radius, glow) => {
     const dotRadius = Math.min(radius, 2);
     context.beginPath();

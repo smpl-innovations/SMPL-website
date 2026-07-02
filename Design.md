@@ -139,7 +139,7 @@ Use the strict navy technical palette from the refactor:
 
 - `#0B1628` for the deepest background and the surface the logo sits on.
 - `#0F1F3D` for cards and surfaces.
-- `#162848` for hover states and border-adjacent depth.
+- `#162848` retired (the `--navy-light` token was unused and has been removed).
 - `#2563EB` for primary CTAs and active states.
 - `#3B82F6` and `#06B6D4` for restrained data/circuit accents.
 
@@ -163,6 +163,34 @@ The v2 redesign (`REDESIGN_PLAN.md`) extends the hero circuit-canvas motif into
 the whole site — "the circuit board is the brand." Everything below is
 implemented in `styles.css`/`script.js` with no dependencies and no build step.
 
+### Tokens (consistency refactor, July 2026)
+
+Every recurring value lives in `:root`; component rules consume tokens, not
+literals.
+
+- Spacing: `--space-2xs/xs/sm/md/lg/xl/2xl/3xl` (8/12/18/24/28/36/44/64px) plus
+  `--space-section` (5rem vertical section padding). Use these for gaps, card
+  paddings and rhythm margins; component one-offs (button/nav padding, hero and
+  footer verticals, sticky offsets, legal pages) stay literal.
+- Radii: `--radius-lg/md/sm` (18/12/8px) and `--radius-pill` (999px).
+- Shadows: `--surface-shadow` (cards/panels) and `--surface-shadow-sm`
+  (scrolled header).
+- White tone ladder: `--white-soft` (.85), `--white-muted` (.72), `--white-dim`
+  (.5), `--white-faint` (.12 — hairlines), `--white-ghost` (.06 — hover wash,
+  sub-hairlines, dot grid), `--white-bright` (.24 — hover borders).
+- Accent border: `--accent-border` (blue-accent at 40%) for the debt-bright
+  and booking panel borders.
+- Type ramps: titles `--fs-title-xl/lg/md/sm/xs` (1.6/1.45/1.35/1.22/1.05rem),
+  body `--fs-body-lg/md/sm` (1.125/1.05/0.95rem, 1rem base implicit), mono
+  labels `--fs-mono-xs/sm/md` (0.68/0.74/0.8rem).
+- Weight ramp: 400 mono/body · 500 hero eyebrow · 600 semibold (h3, links,
+  FAQ summaries) · 640 h2 · 680 h1 · 700 brand/logo.
+- Alpha rule: a palette color at reduced opacity is written
+  `color-mix(in srgb, var(--token) N%, transparent)` — never raw `rgba()`
+  outside `:root`. The circuit-canvas colors in `script.js` intentionally
+  mirror `--blue-glow` as literals (Canvas needs concrete strings); update
+  them in tandem with the palette.
+
 ### Typography
 
 - `--font-display`: Archivo (OFL, variable, instanced to wght 450-800 and
@@ -182,7 +210,7 @@ implemented in `styles.css`/`script.js` with no dependencies and no build step.
 
 - Single `--navy-deep` page ground. Sections are separated by 1px
   `--white-faint` hairlines, never by background swaps. Services, process and
-  advice carry a 22px dot grid at 5% white. A fixed SVG `feTurbulence` grain
+  advice carry a 22px dot grid at `--white-ghost`. A fixed SVG `feTurbulence` grain
   overlay sits on every page at 4% opacity.
 - Section eyebrows are auto-numbered (`/ 01 — …`) by a CSS counter on `main`;
   renumbering happens automatically when sections move.
